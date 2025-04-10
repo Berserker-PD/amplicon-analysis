@@ -7,8 +7,10 @@
 
 echo "Importing data..."
 
-#edit input type and format as per sample data
-#casava1.8 cannot input reads from different folders. If using this type of data, import from a merged reads folder
+mkdir -p results/imported_sequences
+
+	#edit input type and format as per sample data
+	#casava1.8 cannot input reads from different folders. If using this type of data, import from a merged reads folder
 source activate qiime2-amplicon
 
 qiime tools import \

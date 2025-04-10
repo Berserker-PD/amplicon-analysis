@@ -7,6 +7,8 @@
 
 echo "Visualizing metadata file..."
 
+mkdir -p results/visualization
+
 source activate qiime2-amplicon
 
 qiime metadata tabulate \
