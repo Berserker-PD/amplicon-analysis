@@ -8,18 +8,18 @@
 echo "Clipping primers..."
 
 	#These set of command are for paired sequences. To modify or change to single end sequences, please refer to documentation on qiime2.org
+	#EVEN IF YOU DO NOT HAVE PRIMERS TO TRIM, DO RUN THIS COMMAND
+	#IT WILL NOT TRIM YOUR SEQUENCES BUT WILL GIVE THE APPROPRIATE FILENAME TO BE USED IN FURTHER STEPS
 
 mkdir -p results/trimmed_sequences
 
-f_primer=$1
-r_primer=$2
 
 source activate qiime2-amplicon
 
 qiime cutadapt trim-paired \
 --i-demultiplexed-sequences results/imported_sequences/imported_sequences.qza \
---p-front-f echo "$f_primer" \
---p-front-r echo "$r_primer" \
+--p-anywhere-f $1 \
+--p-anywhere-r $2 \
 --o-trimmed-sequences results/trimmed_sequences/trimmed_sequences.qza
 
 conda deactivate
