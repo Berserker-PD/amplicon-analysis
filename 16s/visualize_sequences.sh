@@ -7,13 +7,13 @@
 
 echo "Visualizing sequences..."
 
-mkdir -p results/visualization
+mkdir -p results/visualization/sequences
 
 source activate qiime2-amplicon
 
 qiime demux summarize \
 --i-data results/imported_sequences/imported_sequences.qza \
---o-visualization results/visualization/visualized_sequences.qzv
+--o-visualization results/visualization/sequences/visualized_sequences.qzv
 
 conda deactivate
 

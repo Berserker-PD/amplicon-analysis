@@ -7,13 +7,13 @@
 
 echo "Visualizing metadata file..."
 
-mkdir -p results/visualization
+mkdir -p results/visualization/metadata
 
 source activate qiime2-amplicon
 
 qiime metadata tabulate \
 --m-input-file metadata/metadata.txt \
---o-visualization results/visualization/metadata.qzv
+--o-visualization results/visualization/metadata/metadata.qzv
 
 conda deactivate
 
