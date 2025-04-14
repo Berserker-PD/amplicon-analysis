@@ -6,7 +6,7 @@
 #SBATCH --mem=500G
 
 echo "Removing contaminants..."
-echo "Filtereing feature table and representatiev sequences..."
+echo "Filtereing feature table and representative sequences..."
 
 	#Here, the contaminants such as Chloroplast, Mitochondria, and unclassified reads from amplified data will be removed
 	#You can also provide with a minimum frequency count so samples haveing reads less then specified frequency will be removed
@@ -29,13 +29,13 @@ qiime taxa filter-table \
 
 qiime feature-table filter-samples \
 --i-table results/filtered_data/filtered_table/feature_table_wo_contaminants.qza \
---p-min-frequenncy $1 \
+--p-min-frequency $1 \
 --o-filtered-table results/filtered_data/filtered_table/filtered_feature_table_wo_contaminants.qza \
 
 qiime feature-table filter-seqs \
 --i-data results/dada2/representative_sequences/asv.qza \
 --i-table results/filtered_data/filtered_table/filtered_feature_table_wo_contaminants.qza \
---o-filtered-reads results/filtered_data/filtered_seqs/filtered_asv.qza
+--o-filtered-data results/filtered_data/filtered_seqs/filtered_asv.qza
 
 qiime feature-table summarize \
 --i-table results/filtered_data/filtered_table/filtered_feature_table_wo_contaminants.qza \
