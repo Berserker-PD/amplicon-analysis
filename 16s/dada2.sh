@@ -2,8 +2,8 @@
 #SBATCH --partition=vhmem
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=50
-#SBATCH --mem=200G
+#SBATCH --cpus-per-task=60
+#SBATCH --mem=500G
 
 echo "Performing DADA2 denoising..."
 echo "This may take a while..."
