@@ -24,7 +24,7 @@ qiime taxa filter-table \
 --i-taxonomy results/taxonomy/taxonomy.qza \
 --p-mode contains \
 --p-include p_ \
---p-exclude 'p_;,Chloroplast,Mitochondria' \
+--p-exclude 'p_;,Chloroplast,Mitochondria,Eukaryota' \
 --o-filtered-table results/filtered_data/filtered_table/feature_table_wo_contaminants.qza \
 
 qiime feature-table filter-samples \

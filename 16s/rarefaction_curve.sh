@@ -18,6 +18,7 @@ source activate qiime2-amplicon
 qiime diversity alpha-rarefaction \
 --i-table results/filtered_data/filtered_table/filtered_feature_table_wo_contaminants.qza \
 --p-metrics shannon \
+--p-metrics simpson \
 --m-metadata-file metadata/metadata.txt \
 --p-max-depth $1 \
 --o-visualization results/rarefaction/rarefaction_curve.qzv
