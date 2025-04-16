@@ -2,8 +2,8 @@
 #SBATCH --partition=cpu-standard
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=20
-#SBATCH --mem=200G
+#SBATCH --cpus-per-task=30
+#SBATCH --mem=50G
 
 echo "Building Phylogeny tree from filtered ASV sequences..."
 
