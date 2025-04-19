@@ -17,7 +17,7 @@ qiime diversity core-metrics-phylogenetic \
 --i-table results/filtered_data/filtered_table/filtered_feature_table_wo_contaminants.qza \
 --p-sampling-depth $1 \
 --m-metadata-file metadata/metadata.txt \
---output-dir results/core_metrics_phylogenetic
+--output-dir results/core_phylogeny_metrics
 
 conda deactivate
 

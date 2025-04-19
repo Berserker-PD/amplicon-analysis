@@ -23,8 +23,8 @@ qiime taxa filter-table \
 --i-table results/dada2/feature_table/feature_table.qza \
 --i-taxonomy results/taxonomy/taxonomy.qza \
 --p-mode contains \
---p-include p_ \
---p-exclude 'p_;,Chloroplast,Mitochondria,Eukaryota' \
+--p-include p__ \
+--p-exclude 'p__;,Chloroplast,Mitochondria,Eukaryota' \
 --o-filtered-table results/filtered_data/filtered_table/feature_table_wo_contaminants.qza \
 
 qiime feature-table filter-samples \

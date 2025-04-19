@@ -6,7 +6,7 @@
 #SBATCH --mem=100G
 
 echo "Plotting alpha-rarefaction curve..."
-echo "This can be useful to see sequencing depth and pick appropriate sequencing depth"
+echo "This graph is pick appropriate sequencing depth for phylogenetics analysis"
 
 	#You must have a rough number in mind from fitered feature table.qzv
 	#Enter a max value to see sequencing depth up-to this frequency
@@ -16,13 +16,13 @@ mkdir -p results/visualization/rarefaction
 source activate qiime2-amplicon
 
 qiime diversity alpha-rarefaction \
---i-table results/dada2/feature_table/feature_table.qza \
+--i-table results/filtered_data/filtered_table/filtered_feature_table_wo_contaminants.qza \
 --p-metrics shannon \
 --p-metrics simpson \
 --p-metrics observed_features \
 --m-metadata-file metadata/metadata.txt \
 --p-max-depth $1 \
---o-visualization results/visualization/rarefaction/rarefaction_curve.qzv
+--o-visualization results/visualization/rarefaction/rarefaction_phylogeny.qzv
 
 conda deactivate
 

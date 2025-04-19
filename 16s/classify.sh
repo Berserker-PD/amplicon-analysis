@@ -9,8 +9,8 @@ echo "Classifying reads and assigning taxonomy..."
 echo "Mapping taxonomy assignment to metadata and visualizing"
 echo "This can take time depending on sample density"
 
-mkdir results/taxonomy
-mkdir results/visualization/taxonomy
+mkdir -p results/taxonomy
+mkdir -p results/visualization/taxonomy
 
 	#This step uses a classifier to classify ASV reads and assign them into taxonomy
 	#This file uses Silva 138 naive bayes classifier which assigns taxonomy at 99% similarity
@@ -20,7 +20,7 @@ mkdir results/visualization/taxonomy
 source activate qiime2-amplicon
 
 qiime feature-classifier classify-sklearn \
---i-classifier classifier/silva-138-99-nb-classifier.qza \
+--i-classifier classifier/*.qza \
 --i-reads results/dada2/representative_sequences/asv.qza \
 --o-classification results/taxonomy/taxonomy.qza
 
