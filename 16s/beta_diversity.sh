@@ -77,13 +77,13 @@ qiime diversity beta-group-significance \
 qiime diversity adonis \
 --i-distance-matrix results/core_phylogeny_metrics/weighted_unifrac_distance_matrix.qza \
 --m-metadata-file metadata/metadata.txt \
---p-formula $1+$2 \
+--p-formula $1 \
 --o-visualization results/visualization/beta_diversity/weighted_unifrac_adonis.qzv
 
 qiime diversity adonis \
 --i-distance-matrix results/core_phylogeny_metrics/unweighted_unifrac_distance_matrix.qza \
 --m-metadata-file metadata/metadata.txt \
---p-formula $1+$2 \
+--p-formula $1 \
 --o-visualization results/visualization/beta_diversity/unweighted_unifrac_adonis.qzv
 
 conda deactivate
