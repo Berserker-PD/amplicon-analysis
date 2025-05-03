@@ -1,0 +1,6 @@
+> These steps use the qiime2 amplicon analysis pipeline on HPC. Please make sure you have the (qiiime2-amplicon) conda installed before commencing.
+> This pipeline can be used on 16S and/or ITS amplicon data.
+> Make sure you have your data uploaded to the correct location in the EXACT MANNER as shown in script on cluster and run the codes from appropriate directory (16S or ITS).
+> The data must be uploaded in correct FASTQ format, for valid data types please check qiime2 website (https://docs.qiime2.org/2024.10/tutorials/importing/#sequence-data-with-sequence-quality-information-i-e-fastq).
+> The current analysis uses Casava 1.8 paired-end demultiplexed fastq sequences as import type.
+> Please also make sure you have the sample metadata uploaded to the cluster in .txt format (can also be .csv or .tsv) as this is helpful in downstream analysis.
