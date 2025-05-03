@@ -1,4 +1,4 @@
-#Installing conda environment
+# Installing conda environment
 
 This is the workflow for amp-seq conda env
 
@@ -26,10 +26,10 @@ conda deactivate amp_seq
 
 We have now installed everything we need and can start with analysis
 
-#Data Analysis
-##Getting sample IDs
+# Data Analysis
+## Getting sample IDs
 
-We can now get our sample ids from our raw reads.
+We can now get our sample ids from our raw reads. \
 Assuming you have organized data in separate F and R folders for forward and reverse reads and kept these directories in the raw_dna directory, we will generate the samples file from samples.sh
 
 ```
@@ -46,6 +46,8 @@ cp samples.txt ..
 echo "samples.txt file created"
 echo "file stored in raw_dna folder"
 ```
-Here the first variable is where you define the file path to your F or R reads directory. The second variable is used to indicate what is the suffix of your samples (L1.fq or R1.fq or anything else)
-After succesfull implementation, a file samples.txt will be generated in your designated raw_dna folder.
+Here the first variable is where you define the file path to your F or R reads directory. The second variable is used to indicate what is the suffix of your samples (L1.fq or R1.fq or anything else) \
+After succesfull implementation, a file samples.txt will be generated in your designated raw_dna folder.\
+\
+\
 P.S. keep an eye out on slurm-******.out file for completion and/or error notice.
