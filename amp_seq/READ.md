@@ -1,3 +1,5 @@
+#Installing conda environment
+
 This is the workflow for amp-seq conda env
 
 First we need to make the conda env to install packages
@@ -23,3 +25,10 @@ conda deactivate amp_seq
 ```
 
 We have now installed everything we need and can start with analysis
+
+#Getting sample IDs
+
+We can now get our sample ids from our raw reads.
+Assuming you have organized data in separate F and R folders for forward and reverse reads and kept these directories in the raw_dna directory, we will generate the samples file.
+
+```
