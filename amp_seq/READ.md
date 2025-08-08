@@ -13,11 +13,14 @@ packageVersion("BiocManager")
 BiocManager::install("dada2")
 packageVersion("dada2")
 ```
-You now have all the packages you need for this analysis.
+You now have all the R packages you need for this analysis.
 
+# Installing WSL
 
-Now, we need to make couple of conda envs to install packages(QIIME)
-We're using two versions of QIIME here, install them separately as follows
+This is an optional step if you are on Windows OS. If so, we will now get Windows Subset for Linux (WSL) installed on our system.
+This helps us to have a Linux based language operational on Windows device. You can get the Ubuntu distribution from the offical WSL webpage (https://learn.microsoft.com/en-us/windows/wsl/install)
+
+Once done, just type *WSL* in you command promp or powershell to activate and *exit* to deactivate
 
 ```
 conda env create \
