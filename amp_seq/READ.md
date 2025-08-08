@@ -1,8 +1,8 @@
 # Installing conda environment
 
-This is the workflow for amp-seq conda env
+This is the workflow for amp-seq using various tools and packages
 
-First we need to make the conda env to install packages
+First we need to make couple of conda env to install packages(QIIME)
 
 ```
 conda create -n amp_seq
