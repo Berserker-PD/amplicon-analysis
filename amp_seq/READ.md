@@ -1,11 +1,33 @@
-# Installing conda environment
+# Installing R and R-studio
 
 This is the workflow for amp-seq using various tools and packages
 
-First we need to make couple of conda env to install packages(QIIME)
+Please install R and R-studio before commencing data analysis as we will use them in analysis. You can find them at https://posit.co/download/rstudio-desktop/. Once installed make sure to get the following packages in R to setup your library
 
 ```
-conda create -n amp_seq
+install.packages("ggplot2")
+
+install.packages("BiocManager")
+packageVersion("BiocManager")
+
+BiocManager::install("dada2")
+packageVersion("dada2")
+```
+You now have all the packages you need for this analysis.
+
+
+Now, we need to make couple of conda envs to install packages(QIIME)
+We're using two versions of QIIME here, install them separately as follows
+
+```
+conda env create \
+  --name qiime2-amplicon-2024.10 \
+  --file https://raw.githubusercontent.com/qiime2/distributions/refs/heads/dev/2024.10/amplicon/released/qiime2-amplicon-ubuntu-latest-conda.yml
+```
+```
+conda env create \
+  --name qiime2-amplicon-2025.4 \
+  --file https://raw.githubusercontent.com/qiime2/distributions/refs/heads/dev/2025.4/amplicon/released/qiime2-amplicon-ubuntu-latest-conda.yml
 ```
 
 Once env is created, we need to activate and install packages
