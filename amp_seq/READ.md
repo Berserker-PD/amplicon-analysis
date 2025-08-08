@@ -41,5 +41,20 @@ cp samples.txt ..
 Here the first variable is where you define the file path to your directory. Change the (_R1_001.fastq.gz) to indicate what is the suffix of your samples (L1.fq or R1.fq or anything else) \
 After succesfull implementation, a file samples.txt will be generated in your designated raw_dna folder.\
 \
-\
 
+## Trimming primers
+
+Now, we shall trim off primer sequences from our raw reads using *trimming.sh* file \
+Here, we use cutadapt to trim off our primer sequences\
+
+If you do not have a cutadapt conda installation, please run the following command to install (this is a one time process and we will use the same conda env for future analysis)
+```
+conda create -n cutadapt
+```
+Once the conda is created, activate the environment and install cutadapt
+```
+conda activate cutadapt
+conda install -c bioconda -c conda-forge cutadapt
+conda deactivate
+```
+You have now successfully installed cutadapt in this environment
