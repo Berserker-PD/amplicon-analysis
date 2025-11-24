@@ -72,11 +72,11 @@ sample_names <- sapply(strsplit(basename(raw_forward), "_"),
 #Plot quality plots and save them, FYI- pdf() can be changed to jpeg()
 #Change the number of plots if required
 
-pdf("results/forward_qscore.pdf", width = 10, height = 20)
+pdf("results/forward_qscore.pdf", width = 20, height = 10)
 plotQualityProfile(raw_forward[1:4])
 dev.off()
 
-pdf("results/reverse_qscore.pdf", width = 10, height = 20)
+pdf("results/reverse_qscore.pdf", width = 20, height = 10)
 plotQualityProfile(raw_reverse[1:4])
 dev.off()
 
@@ -104,7 +104,7 @@ errors_reverse <- learnErrors(filtered_reverse, multithread=TRUE)
 
 #Plotting only forward profile, usually reverse is very similar but can modify to plot both
 
-pdf("results/error_plot.pdf", width = 10, height = 20)
+pdf("results/error_plot.pdf", width = 20, height = 10)
 plotErrors(errors_forward, nominalQ=TRUE)
 dev.off()
 
@@ -279,7 +279,7 @@ a <- plot_richness(
     title = "Alpha Diversity Metrics" #CHANGE AS DESIRED
   )
 
-pdf("results/alpha_diversity.pdf", width = 10, height = 20)
+pdf("results/alpha_diversity.pdf", width = 20, height = 10)
 a
 dev.off()
 
@@ -290,24 +290,24 @@ dev.off()
 
 ord <- ordinate(physeq, 'MDS', 'euclidean')
 
-pdf("results/beta_diversity_MDS.pdf", width = 10, height = 20)
+pdf("results/beta_diversity_MDS.pdf", width = 20, height = 10)
 plot_ordination(physeq, ord, type='samples', color='group',
                 title='PCA of the samples - Euclidean distance')
 dev.off()
 
 ord1 <- ordinate(physeq, 'NMDS', 'bray')
-pdf("results/beta_diversity_NMDS.pdf", width = 10, height = 20)
+pdf("results/beta_diversity_NMDS.pdf", width = 20, height = 10)
 plot_ordination(physeq, ord, type='samples', color='group',
                 title='PCA of the samples - Bray curtis')
 dev.off()
 
 ordu = ordinate(physeq, "PCoA", "unifrac", weighted=TRUE)
-pdf("results/beta_diversity_PCoA_weighted.pdf", width = 10, height = 20)
+pdf("results/beta_diversity_PCoA_weighted.pdf", width = 20, height = 10)
 plot_ordination(physeq, ordu, color="group", shape="status", title = 'PCoA weighted Unifrac')
 dev.off()
 
 ordu1 = ordinate(physeq, "PCoA", "unifrac", weighted=F)
-pdf("results/beta_diversity_PCoA_unweighted.pdf", width = 10, height = 20)
+pdf("results/beta_diversity_PCoA_unweighted.pdf", width = 20, height = 10)
 plot_ordination(physeq, ordu1, color="group", shape="status", title = 'PCoA un-weighted Unifrac')
 dev.off()
 
@@ -318,21 +318,21 @@ dev.off()
 p1 = plot_ordination(physeq, ordu, type="split", color="Phylum", shape="group", label="biochar") 
 p1 = p1 + geom_point(size=7, alpha=0.75) + scale_shape_manual(values=seq(15,25)) #CHANGE VALUES IF YOUR DATA HAS MANY VARIABLES more than 10
 p1 = p1 + scale_colour_brewer(type="qual", palette="Paired")
-pdf("results/beta_diversity_split_plot.pdf", width = 10, height = 20)
+pdf("results/beta_diversity_split_plot.pdf", width = 20, height = 10)
 p1 + ggtitle("Split plot for Samples and Taxa")
 dev.off()
 
 p2 = plot_ordination(physeq, ordu, color="biochar", shape="AMF")
 p2 = p2 + geom_point(size=7, alpha=0.75)
 p2 = p2 + scale_colour_brewer(type="qual", palette="Set1")
-pdf("results/beta_diversity_weighted_unifrac.pdf", width = 10, height = 20)
+pdf("results/beta_diversity_weighted_unifrac.pdf", width = 20, height = 10)
 p2 + ggtitle("PCoA on weighted-UniFrac distance")
 dev.off()
 
 p3 = plot_ordination(physeq, ordu1, color="biochar", shape="AMF")
 p3 = p3 + geom_point(size=7, alpha=0.75)
 p3 = p3 + scale_colour_brewer(type="qual", palette="Set1")
-pdf("results/beta_diversity_unweighted_unifrac.pdf", width = 10, height = 20)
+pdf("results/beta_diversity_unweighted_unifrac.pdf", width = 20, height = 10)
 p3 + ggtitle("MDS/PCoA on un-weighted-UniFrac distance")
 dev.off()
 
@@ -344,7 +344,7 @@ dev.off()
 top100 <- names(sort(taxa_sums(physeq), decreasing=TRUE))[1:100]
 physeq_top100 <- transform_sample_counts(physeq, function(OTU) OTU/sum(OTU))
 physeq_top100 <- prune_taxa(top100, physeq_top100)
-pdf("results/abundant_families.pdf", width = 10, height = 20)
+pdf("results/abundant_families.pdf", width = 20, height = 10)
 plot_bar(physeq_top100, x='group', fill='Family') +
   facet_wrap(~group, scales='free_x') + ggtitle("Top 100 Abundant Families")
 dev.off()
@@ -352,7 +352,7 @@ dev.off()
 top100 <- names(sort(taxa_sums(physeq), decreasing=TRUE))[1:100]
 physeq_top100 <- transform_sample_counts(physeq, function(OTU) OTU/sum(OTU))
 physeq_top100 <- prune_taxa(top100, physeq_top100)
-pdf("results/abundant_phyla.pdf", width = 10, height = 20)
+pdf("results/abundant_phyla.pdf", width = 20, height = 10)
 plot_bar(physeq_top100, x='group', fill='Phylum') +
   facet_wrap(~group, scales='free_x') + ggtitle("Top 100 Abundant Phyla")
 dev.off()
@@ -360,14 +360,14 @@ dev.off()
 top20 <- names(sort(taxa_sums(physeq), decreasing=TRUE))[1:20]
 physeq_top20 <- transform_sample_counts(physeq, function(OTU) OTU/sum(OTU))
 physeq_top20 <- prune_taxa(top20, physeq_top20)
-pdf("results/abundant_species.pdf", width = 10, height = 20)
+pdf("results/abundant_species.pdf", width = 20, height = 10)
 plot_bar(physeq_top20, x='group', fill='Species') +
   facet_wrap(~group, scales='free_x') + ggtitle("Top 20 Abundant Species")
 dev.off()
 
 
 
-### Anundance tree ###
+### Abundance tree ###
 
 # Can specify '#####' at Phylum,Species,Family or Order level. Mention the level before entry. Currently set at Phylum
 
