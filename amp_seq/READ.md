@@ -34,7 +34,7 @@ Organize your raw data in a folder with forward and reverse reads and we will ru
 ### Complete pipeline for meta-barcoding analysis ###
 ################################################################################
 
-#Pleae ensure you have the following packages installed before commencing#
+#Please ensure you have the following packages installed before commencing#
 
 library(dada2)
 library(ggplot2)
