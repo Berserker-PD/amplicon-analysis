@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH --partition=cpu-standard
+#SBATCH --partition=vhmem
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=30
-#SBATCH --mem=200G
+#SBATCH --cpus-per-task=50
+#SBATCH --mem=300G
 
 echo "Kraken2 classification running..."
 
@@ -32,7 +32,7 @@ do
 
     kraken2 \
         --db $1 \
-        --threads 30 \
+        --threads 50 \
         --paired $f $r \
         --output $4/${SAMPLE}_output.txt \
         --report $4/${SAMPLE}_report.txt \
